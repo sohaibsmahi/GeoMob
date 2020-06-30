@@ -23,10 +23,6 @@ class ListAdapter(private val context: Context,val clickListner: OnClickListner,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
-//        holder.countryName.text = list[p1].name
-//        Picasso.with(activity)
-//            .load(list[p1].drapeau)
-//            .into(holder.countryImage)
 
         holder.initialize(list[p1],context,clickListner)
     }
@@ -36,11 +32,15 @@ class ListAdapter(private val context: Context,val clickListner: OnClickListner,
         val countryImage : ImageView = v.findViewById(R.id.country_image)
 
         fun initialize(country: Country, context: Context, action:OnClickListner){
+
             countryName.text = country.name
+
             Glide.with(context).load(country.drapeau).apply(RequestOptions.circleCropTransform()).into(countryImage);
+
             itemView.setOnClickListener{
                 action.onItemClick(country,adapterPosition)
             }
+
         }
     }
 

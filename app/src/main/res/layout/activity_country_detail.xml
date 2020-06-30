@@ -1,36 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.example.geomob.CountryDetailActivity">
-    <LinearLayout
-            android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TextView
-                android:id="@+id/name"
-                android:text="Algeria"
-                android:textSize="35dp"
-                android:layout_marginRight="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-            <ImageView
-                    android:src="@drawable/ic_launcher_background"
+            android:layout_height="wrap_content"
+            tools:context=".CountryDetails" android:id="@+id/constraintLayout">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp">
+            <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            <ImageButton
-                    android:layout_width="wrap_content"
-                    android:src="@drawable/play"
-                    android:layout_height="wrap_content"/>
-        </LinearLayout>
+                    android:layout_height="wrap_content"
+                    >
 
-    </LinearLayout>
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                        <TextView
+                                android:textSize="30dp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textStyle="bold"
+                                android:id="@+id/name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="20dp"
+                                android:text="Country Name"
 
+                                />
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="60dp"
+                                android:layout_alignParentRight="true"
+                            android:orientation="vertical">
+
+                        <ImageView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                app:srcCompat="@drawable/ic_launcher_background"
+                                android:id="@+id/flag"
+                                />
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+
+>
+                            <ImageButton
+                                    android:id="@+id/play"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_height="wrap_content"
+                                android:src="@drawable/play"/>
+
+                            <ImageButton
+                                    android:id="@+id/stop"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/stop"
+                                    android:layout_marginRight="3dp"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:elevation="6dp"
+                    android:layout_margin="10dp"
+                    app:cardElevation="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="10dp" >
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        tools:ignore="MissingConstraints">
+                    <TextView
+                            android:text="Description"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            android:layout_margin="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/description_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            />
+                    <TextView
+                            android:layout_below="@id/description_title"
+                            android:layout_width="210dp"
+                            android:id="@id/description"
+                            android:layout_margin="10dp"
+                            android:layout_height="wrap_content"
+                            android:text="fjkhfkjhfskjhfkjshfkj
+                            shfkjshfkjhsjkfhskjfhskjhfkjshjk"/>
+
+                    <LinearLayout
+                            android:layout_toEndOf="@+id/description"
+                            android:layout_below="@id/description_title"
+                            android:background="@drawable/border"
+                            android:id="@+id/genealities_box"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:text="Generalités"
+                                android:textStyle="bold"
+                                android:textSize="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/generalites_title"
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+
+                        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:rowCount="3"
+                                android:layout_margin="10dp"
+                                android:elevation="6dp"
+                                android:columnCount="2">
+                            <TextView
+                                    android:layout_column="0"
+                                    android:layout_row="0"
+                                    android:textAlignment="textEnd"
+                                    android:textFontWeight="700"
+                                    android:text="Capitale "
+                                    android:gravity="end"
+                                    android:layout_width="wrap_content"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+                            <TextView
+                                    android:layout_column="0"
+                                    android:layout_row="1"
+                                    android:text="Population "
+                                    android:textFontWeight="700"
+                                    android:textAlignment="textEnd"
+                                    android:layout_width="wrap_content"
+                                    android:gravity="end"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+                            <TextView
+                                    android:layout_column="0"
+                                    android:layout_row="2"
+                                    android:text="Surface "
+                                    android:textFontWeight="700"
+                                    android:textAlignment="textEnd"
+                                    android:gravity="end"
+                                    android:layout_width="wrap_content"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+                            <TextView
+                                    android:layout_column="1"
+                                    android:text="value"
+                                    android:layout_row="0"
+                                    android:layout_width="wrap_content"
+                                    android:id="@+id/capital"
+
+                                    />
+                            <TextView
+                                    android:layout_column="1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_row="1"
+                                    android:text="value"
+                                    android:id="@+id/population"
+
+                                    />
+                            <TextView
+                                    android:layout_column="1"
+                                    android:layout_width="wrap_content"
+                                    android:text="value"
+                                    android:layout_row="2"
+                                    android:id="@+id/surface"
+
+                                    />
+                        </GridLayout>
+                    </LinearLayout>
+
+
+                    <ImageButton
+                            android:layout_below="@+id/genealities_box"
+                            android:id="@+id/wikipedia_btn"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/wikipedia"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+
+                            />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                        android:elevation="6dp"
+                        android:layout_margin="10dp"
+                        app:cardElevation="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="10dp" >
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            >
+                        <TextView
+                                android:text="Historique"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                android:layout_margin="10dp"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/historique_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+
+                        <com.ms.square.android.expandabletextview.ExpandableTextView
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/expand_text_view"
+                                android:layout_below="@id/historique_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                expandableTextView:maxCollapsedLines="4"
+                                expandableTextView:animDuration="200">
+                            <TextView
+                                    android:id="@id/expandable_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:textSize="16sp"
+                                    android:textColor="#666666" />
+                            <ImageButton
+                                    android:id="@id/expand_collapse"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="16dp"
+                                    android:layout_gravity="right|bottom"
+                                    android:background="@android:color/transparent"/>
+                        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+
+
+
+
+
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                        android:elevation="6dp"
+                        android:layout_margin="10dp"
+                        app:cardElevation="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardCornerRadius="10dp" >
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        >
+                <TextView
+                        android:text="Slideshow"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:layout_margin="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/slidshow_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                <com.denzcoskun.imageslider.ImageSlider
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@id/slidshow_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:id="@+id/slider">
+                </com.denzcoskun.imageslider.ImageSlider>
+                </RelativeLayout></androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/rv_tweets"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

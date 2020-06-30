@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [Country::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun countryDao(): CountryDao
+    abstract fun getCountryDao(): CountryDao
     companion object {
         @Volatile private var instance:AppDatabase?=null
         private val LOCK = Any()

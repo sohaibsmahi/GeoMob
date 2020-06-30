@@ -5,10 +5,10 @@ import androidx.room.*
 @Dao
 interface CountryDao {
     @Query("Select * from countries")
-    fun getCountries():List<Country>
+    fun getCountries():MutableList<Country>
 
     @Query("Select * from countries Limit 2")
-    fun getInitialCountries():List<Country>
+    fun getInitialCountries():MutableList<Country>
 
 
     @Query("Select * from countries where id = :id")
