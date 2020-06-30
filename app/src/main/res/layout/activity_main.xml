@@ -15,17 +15,32 @@
             android:layout_marginTop="50dp"/>
 
     <EditText
+            android:id="@+id/search_bar"
             android:layout_marginTop="30dp"
             android:drawablePadding="20dp"
             android:layout_below="@+id/logo"
             android:paddingLeft="20dp"
             android:drawableLeft="@drawable/ic_search"
-            android:layout_marginHorizontal="20dp"
+           android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_edittext"
             android:hint="Search for countries"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/search_bar"
+            android:id="@+id/rv_countries"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_above="@id/discover_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
     <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/discover_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Discover More"
