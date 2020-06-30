@@ -91,7 +91,7 @@ class CountryDetailActivity : AppCompatActivity() {
 
         }
 
-       fetchTweets("canada", this )
+       fetchTweets(intent.getStringExtra("name"), this )
 
         }
 
