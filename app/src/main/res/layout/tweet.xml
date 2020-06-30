@@ -24,15 +24,6 @@
             android:orientation="vertical">
 
         <TextView
-                android:id="@+id/username"
-                android:textStyle="bold"
-                android:layout_margin="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Username"
-
-            />
-        <TextView
                 android:id="@+id/content"
                 android:layout_margin="20dp"
                 android:layout_width="wrap_content"
@@ -41,14 +32,14 @@
                 />
         </LinearLayout>
 
-        <!--<androidx.appcompat.widget.AppCompatImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
 
 
                 android:layout_gravity="right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/Twitter_Bird"
-                tools:ignore="PrivateResource" />-->
+                android:src="@drawable/twitter_logo"
+                tools:ignore="PrivateResource" />
 
 
     </androidx.cardview.widget.CardView>

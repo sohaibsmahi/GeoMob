@@ -25,15 +25,13 @@ class TweetsAdapter( val tweets : List<Data> , private val context: Context) : R
 
     override fun onBindViewHolder(holder: ViewHolder, p1: Int) {
 
-        holder.tweet_content.text = tweets[p1].entities.mentions[0].username
         holder.tweet_content.text = tweets[p1].text
 
 
     }
 
-    class ViewHolder(v: View, val context: Context) : RecyclerView.ViewHolder(v) {
+    class ViewHolder(v: View , val context: Context) : RecyclerView.ViewHolder(v) {
 
-        val tweet_username: TextView = v.findViewById(R.id.username)
         val tweet_content : TextView = v.findViewById(R.id.content)
 
 
