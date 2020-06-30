@@ -62,6 +62,10 @@ dependencies {
     //Rx
     implementation 'io.reactivex.rxjava2:rxjava:2.2.7'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //Twitter
+
+    implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
+    implementation 'com.twitter.sdk.android:tweet-ui:3.1.1'
 
 
     implementation 'org.jetbrains.anko:anko-common:0.9'

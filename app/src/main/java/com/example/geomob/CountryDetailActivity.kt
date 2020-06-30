@@ -1,14 +1,17 @@
 package com.example.geomob
 
+
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.geomob.data.Data
 import com.example.geomob.data.Images
 import com.example.geomob.retrofit.IAPI
 import com.example.geomob.retrofit.RetrofitClient
@@ -18,13 +21,21 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_country_detail.*
 
+
 class CountryDetailActivity : AppCompatActivity() {
 
     lateinit var mediaPlayer: MediaPlayer
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_detail)
+
+
+
+
+        //-----------------------------------------------------------------------------------------------------------------
 
         name.text =  intent.getStringExtra("name")
         capital.text = intent.getStringExtra("capital")
@@ -76,37 +87,38 @@ class CountryDetailActivity : AppCompatActivity() {
 
         }
 
-
-       // fetchTweets("canada", this )
-
-
+       fetchTweets("canada", this )
 
         }
 
 
-   /* fun fetchTweets (country_name:String , context : Context ) {
+    fun fetchTweets (country_name:String , context : Context ) {
 
         val compositeDisposable = CompositeDisposable()
         val retrofit = RetrofitClient.instance
         val jsonAPI = retrofit.create(IAPI::class.java)
+        val bearertoken = "Token AAAAAAAAAAAAAAAAAAAAAIpGFgEAAAAASCdEQe7UxzAaQ44yZ%2BToTxOyF04%3D4LtxXsyqv7EmPDm48LIKrYnCeIgqRK4FUCWo5YYT46Z6nU2a1m"
 
-        compositeDisposable.add( jsonAPI.getTweets(country_name)
+        compositeDisposable.add( jsonAPI.getTweets(bearertoken , country_name)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe{ tweets ->
-                tweets.forEach {  tweet ->     }
-              displayTweets(tweets , context)
+
+                Log.e("TWeeets", tweets.data.toString())
+              displayTweets(tweets.data , context)
 
             }
         )
     }
 
 
-    fun displayTweets (tweets: Tweets , context : Context) {
+    fun displayTweets (tweets: List<Data>, context : Context) {
         Log.e("tweets" , tweets.toString())
         rv_tweets.adapter = TweetsAdapter(tweets , context)
 
-    } */
+    }
+
+
 
 
 }
