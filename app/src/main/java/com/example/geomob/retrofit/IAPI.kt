@@ -7,8 +7,9 @@ import retrofit2.http.*
 
 interface IAPI {
 
-    @GET("{country}/")
-    fun getTweets( @Header("Authorization") Authorization: String,@Path("country") country: String): Observable<Tweets>
+    @GET("search")
+
+    fun getTweets( @Header("Authorization") Authorization: String,@Query("query") country: String): Observable<Tweets>
 
 
 }

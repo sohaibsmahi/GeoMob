@@ -7,8 +7,10 @@ import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.geomob.data.Data
@@ -19,6 +21,7 @@ import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_countries.*
 import kotlinx.android.synthetic.main.activity_country_detail.*
 
 
@@ -32,6 +35,7 @@ class CountryDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_detail)
 
+        rv_tweets.layoutManager = LinearLayoutManager(this)
 
 
 
@@ -97,18 +101,20 @@ class CountryDetailActivity : AppCompatActivity() {
         val compositeDisposable = CompositeDisposable()
         val retrofit = RetrofitClient.instance
         val jsonAPI = retrofit.create(IAPI::class.java)
-        val bearertoken = "Token AAAAAAAAAAAAAAAAAAAAAIpGFgEAAAAASCdEQe7UxzAaQ44yZ%2BToTxOyF04%3D4LtxXsyqv7EmPDm48LIKrYnCeIgqRK4FUCWo5YYT46Z6nU2a1m"
+        val bearertoken = "Bearer AAAAAAAAAAAAAAAAAAAAAIpGFgEAAAAASCdEQe7UxzAaQ44yZ%2BToTxOyF04%3D4LtxXsyqv7EmPDm48LIKrYnCeIgqRK4FUCWo5YYT46Z6nU2a1m"
 
         compositeDisposable.add( jsonAPI.getTweets(bearertoken , country_name)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe{ tweets ->
+            .subscribe({ tweets ->
 
                 Log.e("TWeeets", tweets.data.toString())
               displayTweets(tweets.data , context)
 
-            }
+            }, { error  ->  Toast.makeText(context , error.message ,
+                Toast.LENGTH_LONG).show() } )
         )
+
     }
 
 

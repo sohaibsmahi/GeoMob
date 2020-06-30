@@ -1,10 +1,11 @@
 package com.example.geomob.retrofit
 
+import androidx.room.Query
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URL = "https://api.twitter.com/labs/1/tweets/search?query="
+const val BASE_URL = "https://api.twitter.com/labs/1/tweets/"
 
 object RetrofitClient {
 

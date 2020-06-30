@@ -41,14 +41,14 @@
                 />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <!--<androidx.appcompat.widget.AppCompatImageButton
 
 
                 android:layout_gravity="right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/Twitter_Bird"
-                tools:ignore="PrivateResource" />
+                tools:ignore="PrivateResource" />-->
 
 
     </androidx.cardview.widget.CardView>
