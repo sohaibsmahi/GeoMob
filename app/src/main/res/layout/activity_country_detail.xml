@@ -89,129 +89,135 @@
                     android:layout_height="match_parent"
                     app:cardCornerRadius="10dp" >
 
-                <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        tools:ignore="MissingConstraints">
-                    <TextView
-                            android:text="Description"
-                            android:textStyle="bold"
-                            android:textSize="17dp"
-                            android:layout_margin="10dp"
-                            android:layout_centerHorizontal="true"
-                            android:id="@+id/description_title"
-                            android:layout_width="wrap_content"
+                    <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            />
-                    <TextView
-                            android:layout_below="@id/description_title"
-                            android:layout_width="210dp"
-                            android:id="@id/description"
-                            android:layout_margin="10dp"
-                            android:layout_height="wrap_content"
-                            android:text="fjkhfkjhfskjhfkjshfkj
-                            shfkjshfkjhsjkfhskjfhskjhfkjshjk"/>
-
-                    <LinearLayout
-                            android:layout_toEndOf="@+id/description"
-                            android:layout_below="@id/description_title"
-                            android:background="@drawable/border"
-                            android:id="@+id/genealities_box"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:layout_marginBottom="15dp"
+                            tools:ignore="MissingConstraints">
 
                         <TextView
-                                android:text="Generalités"
-                                android:textStyle="bold"
-                                android:textSize="16dp"
-                                android:layout_gravity="center_horizontal"
-                                android:id="@+id/generalites_title"
-                                android:gravity="center"
+                                android:id="@+id/description_title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="10dp"
+                                android:text="Description"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+
+                        <TextView
+                                android:id="@id/description"
+                                android:layout_width="210dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/description_title"
+                                android:layout_margin="10dp"
+                                android:text="fjkhfkjhfskjhfkjshfkj
+                                shfkjshfkjhsjkfhskjfhskjhfkjshjk" />
+
+                        <LinearLayout
+                                android:id="@+id/genealities_box"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/description_title"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_toEndOf="@+id/description"
+                                android:background="@drawable/border"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/generalites_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center"
+                                    android:text="Generalités"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+
+                            <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:columnCount="2"
+                                    android:elevation="6dp"
+                                    android:rowCount="3">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_row="0"
+                                        android:layout_column="0"
+                                        android:gravity="end"
+                                        android:text="Capitale "
+                                        android:textAlignment="textEnd"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                        android:textFontWeight="700" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_row="1"
+                                        android:layout_column="0"
+                                        android:gravity="end"
+                                        android:text="Population "
+                                        android:textAlignment="textEnd"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                        android:textFontWeight="700" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_row="2"
+                                        android:layout_column="0"
+                                        android:gravity="end"
+                                        android:text="Surface "
+                                        android:textAlignment="textEnd"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                        android:textFontWeight="700" />
+
+                                <TextView
+                                        android:id="@+id/capital"
+                                        android:layout_width="wrap_content"
+                                        android:layout_row="0"
+                                        android:layout_column="1"
+                                        android:text="value"
+
+                                        />
+
+                                <TextView
+                                        android:id="@+id/population"
+                                        android:layout_width="wrap_content"
+                                        android:layout_row="1"
+                                        android:layout_column="1"
+                                        android:text="value"
+
+                                        />
+
+                                <TextView
+                                        android:id="@+id/surface"
+                                        android:layout_width="wrap_content"
+                                        android:layout_row="2"
+                                        android:layout_column="1"
+                                        android:text="value"
+
+                                        />
+                            </GridLayout>
+                        </LinearLayout>
+
+
+                        <ImageButton
+                                android:id="@+id/wikipedia_btn"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:layout_below="@+id/genealities_box"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/wikipedia"
+
                                 />
 
-                        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:rowCount="3"
-                                android:layout_margin="10dp"
-                                android:elevation="6dp"
-                                android:columnCount="2">
-                            <TextView
-                                    android:layout_column="0"
-                                    android:layout_row="0"
-                                    android:textAlignment="textEnd"
-                                    android:textFontWeight="700"
-                                    android:text="Capitale "
-                                    android:gravity="end"
-                                    android:layout_width="wrap_content"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
-                            <TextView
-                                    android:layout_column="0"
-                                    android:layout_row="1"
-                                    android:text="Population "
-                                    android:textFontWeight="700"
-                                    android:textAlignment="textEnd"
-                                    android:layout_width="wrap_content"
-                                    android:gravity="end"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
-                            <TextView
-                                    android:layout_column="0"
-                                    android:layout_row="2"
-                                    android:text="Surface "
-                                    android:textFontWeight="700"
-                                    android:textAlignment="textEnd"
-                                    android:gravity="end"
-                                    android:layout_width="wrap_content"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
-                            <TextView
-                                    android:layout_column="1"
-                                    android:text="value"
-                                    android:layout_row="0"
-                                    android:layout_width="wrap_content"
-                                    android:id="@+id/capital"
-
-                                    />
-                            <TextView
-                                    android:layout_column="1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_row="1"
-                                    android:text="value"
-                                    android:id="@+id/population"
-
-                                    />
-                            <TextView
-                                    android:layout_column="1"
-                                    android:layout_width="wrap_content"
-                                    android:text="value"
-                                    android:layout_row="2"
-                                    android:id="@+id/surface"
-
-                                    />
-                        </GridLayout>
-                    </LinearLayout>
-
-
-                    <ImageButton
-                            android:layout_below="@+id/genealities_box"
-                            android:id="@+id/wikipedia_btn"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="20dp"
-                            android:src="@drawable/wikipedia"
-                            android:layout_marginTop="10dp"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-
-                            />
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                         android:elevation="6dp"
