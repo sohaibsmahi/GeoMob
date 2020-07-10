@@ -42,12 +42,13 @@
                         <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="60dp"
+                                android:layout_marginRight="30dp"
                                 android:layout_alignParentRight="true"
                             android:orientation="vertical">
 
                         <ImageView
                                 android:layout_width="64dp"
+
                                 android:layout_height="64dp"
                                 app:srcCompat="@drawable/ic_launcher_background"
                                 android:id="@+id/flag"
@@ -270,13 +271,6 @@
                         </com.ms.square.android.expandabletextview.ExpandableTextView>
 
 
-
-
-
-
-
-
-
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -313,15 +307,40 @@
                 </com.denzcoskun.imageslider.ImageSlider>
                 </RelativeLayout></androidx.cardview.widget.CardView>
 
-                <androidx.recyclerview.widget.RecyclerView
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/rv_tweets"
+                <androidx.cardview.widget.CardView
+                        android:elevation="6dp"
+                        android:layout_margin="10dp"
+                        app:cardElevation="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:cardCornerRadius="10dp">
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:text="Tweets"
+                                android:textStyle="bold"
+                                android:textSize="17dp"
+                                android:layout_margin="10dp"
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/twt_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+                        <androidx.recyclerview.widget.RecyclerView
+                                android:layout_below="@id/twt_title"
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/rv_tweets"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
