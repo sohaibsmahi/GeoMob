@@ -114,23 +114,23 @@
                                 android:textStyle="bold" />
 
                         <TextView
-                                android:id="@id/description"
-                                android:layout_width="210dp"
+                                android:id="@+id/description"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/description_title"
+                                android:layout_below="@id/genealities_box"
                                 android:layout_margin="10dp"
                                 android:text="fjkhfkjhfskjhfkjshfkj
                                 shfkjshfkjhsjkfhskjfhskjhfkjshjk" />
 
                         <LinearLayout
                                 android:id="@+id/genealities_box"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/description_title"
-                                android:layout_alignParentRight="true"
+                                android:layout_below="@id/wikipedia_btn"
                                 android:layout_marginTop="0dp"
                                 android:layout_marginEnd="8dp"
-                                android:layout_toEndOf="@+id/description"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
                                 android:background="@drawable/border"
                                 android:orientation="vertical">
 
@@ -145,12 +145,13 @@
                                     android:textStyle="bold" />
 
                             <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
                                     android:columnCount="2"
                                     android:elevation="6dp"
-                                    android:rowCount="3">
+                                    android:rowCount="3"
+                                    android:layout_gravity="center">
 
                                 <TextView
                                         android:layout_width="wrap_content"
@@ -221,9 +222,9 @@
 
                         <ImageButton
                                 android:id="@+id/wikipedia_btn"
+                                android:layout_alignParentTop="true"
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
-                                android:layout_below="@+id/genealities_box"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginRight="20dp"
