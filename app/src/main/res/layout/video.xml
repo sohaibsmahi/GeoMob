@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+
+            app:cardCornerRadius="15dp"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+        <VideoView
+                android:id="@+id/video"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:layout_constraintHorizontal_bias="1.0"
+                />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

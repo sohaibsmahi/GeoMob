@@ -53,11 +53,18 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                 val gson = Gson()
 
 
+
                 val images = arrayListOf<String> (
                 "https://live.staticflickr.com//883//41011712220_16c0b8d1dd_o.jpg",
                 "https://live.staticflickr.com//65535//50047590221_2ed512c68b_o.jpg",
                 "https://live.staticflickr.com//65535//50058612772_322612ac4a_o.jpg")
                 val imagesString = gson.toJson(images, Images::class.java)
+
+                val videos = arrayListOf<String> (
+                    "android.resource://" + getPackageName() + "/" + R.raw.canada1,
+                    "android.resource://" + getPackageName() + "/" + R.raw.canada2
+                 )
+                val videosString = gson.toJson(videos, Images::class.java)
 
                 val images2 = arrayListOf<String> (
                 "https://live.staticflickr.com//65535//49934245137_95e8a57db4_o.jpg",
@@ -65,11 +72,23 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                 "https://live.staticflickr.com//65535//48924690721_6176ef5679_o.jpg")
                 val imagesString2 = gson.toJson(images2, Images::class.java)
 
+                val videos2 = arrayListOf<String> (
+                    "android.resource://" + getPackageName() + "/" + R.raw.germany1,
+                    "android.resource://" + getPackageName() + "/" + R.raw.germany2
+                )
+                val videosString2 = gson.toJson(videos2, Images::class.java)
+
                 val images3 = arrayListOf<String> (
                 "https://live.staticflickr.com//65535//49865878512_83e9e9b5f0_o.jpg",
                 "https://live.staticflickr.com//4465//26206536459_7670e22b0d_o.jpg",
                 "https://live.staticflickr.com//4888//40059791363_b12a2f2b5b_o.jpg")
                 val imagesString3 = gson.toJson(images3, Images::class.java)
+
+                val videos3 = arrayListOf<String> (
+                    "android.resource://" + getPackageName() + "/" + R.raw.japan1,
+                    "android.resource://" + getPackageName() + "/" + R.raw.japan2
+                )
+                val videosString3 = gson.toJson(videos3, Images::class.java)
 
                 val images4 = arrayListOf<String> (
                 "https://live.staticflickr.com//65535//49338150737_dbd136234d_o.jpg",
@@ -77,11 +96,23 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                 "https://live.staticflickr.com//65535//48868770336_d52d0fe877_o.jpg")
                 val imagesString4 = gson.toJson(images4, Images::class.java)
 
+                val videos4 = arrayListOf<String> (
+                    "android.resource://" + getPackageName() + "/" + R.raw.australia1,
+                    "android.resource://" + getPackageName() + "/" + R.raw.austraila2
+                )
+                val videosString4 = gson.toJson(videos4, Images::class.java)
+
                 val images5 = arrayListOf<String> (
                 "https://live.staticflickr.com//65535//50060938702_624549a487_o.jpg",
                 "https://live.staticflickr.com//4138//4934202695_de91074a0a_o.jpg",
                 "https://live.staticflickr.com//65535//50061241773_ce2b9bf1ac_o.jpg")
                 val imagesString5 = gson.toJson(images5, Images::class.java)
+
+                val videos5 = arrayListOf<String> (
+                    "android.resource://" + getPackageName() + "/" + R.raw.uk1,
+                    "android.resource://" + getPackageName() + "/" + R.raw.uk2
+                )
+                val videosString5 = gson.toJson(videos5, Images::class.java)
 
 
             var country1 =
@@ -127,7 +158,7 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                             "development." ,
                          imagesString  ,
                     "",
-                    ""
+                    videosString
                     )
                 var country2 =
                 Country ("de" ,
@@ -171,7 +202,7 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                             "In the aftermath of World War II (1939–45) and following occupation by the victorious powers (the United States, the Soviet Union, Britain, and France), Germany came to consist of two states. One, East Germany, never attained real legitimacy in the eyes of its citizens, fell farther and farther behind economically, and had to use force to prevent its population from fleeing to the West. The other, West Germany, was resoundingly successful. Within two decades of defeat, it had become one of the world's richest nations, with a prosperity that extended to all segments of the population. The economy performed so successfully that eventually several million foreigners came to West Germany to work as well. West German and foreign workers alike were protected from need arising from sickness, accidents, and old age by an extensive, mostly nongovernment welfare system. In 1990 German unification overcame the geographic separation of the two German states, including an infamous wall between West Berlin and East Berlin, but economic integration still has not been achieved satisfactorily. In the first decade of the twenty-first century, the forces of globalization are posing a renewed challenge to the social-market economy in place throughout the nation.\n" ,
                     imagesString2  ,
                     "",
-                    ""
+                    videosString2
                 )
                 var country3 =
                 Country ("jp" ,
@@ -335,7 +366,7 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                             "\n" ,
                     imagesString3  ,
                     "",
-                    ""
+                    videosString3
                 )
 
 
@@ -390,7 +421,7 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                             "Today – Since around 2012, Australia has welcomed around 190,000 permanent new arrivals a year. The humanitarian intake has sat at around 11-14,000 per year since the mid-1980s. Approximately 12,000 Syrians were accepted in 2015 in response to the war in Syria, and temporary arrivals such as international students and people entering on 457 work visas have numbered around 400,000.\n",
                     imagesString4  ,
                     "",
-                    ""
+                    videosString4
                 )
 
             var country5 =
@@ -526,7 +557,7 @@ class MainActivity : AppCompatActivity() , ListAdapter.OnClickListner {
                             "\n",
                     imagesString5  ,
                     "",
-                    ""
+                    videosString5
                 )
 
 

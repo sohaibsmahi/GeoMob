@@ -4,14 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geomob.data.Data
 
 
-class TweetsAdapter( val tweets : List<Data> , private val context: Context) : RecyclerView.Adapter<TweetsAdapter.ViewHolder>() {
+class TweetsAdapter(val tweets : List<Data>, private val context: Context) : RecyclerView.Adapter<TweetsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
 

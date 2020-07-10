@@ -21,7 +21,6 @@ import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_countries.*
 import kotlinx.android.synthetic.main.activity_country_detail.*
 
 
@@ -36,6 +35,7 @@ class CountryDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_country_detail)
 
         rv_tweets.layoutManager = LinearLayoutManager(this)
+        rv_videos.layoutManager = LinearLayoutManager(this)
 
 
 
@@ -75,7 +75,7 @@ class CountryDetailActivity : AppCompatActivity() {
 
         val imagesString = intent.getStringExtra("images")
 
-        val images : ArrayList<String> =  gson.fromJson( imagesString , Images::class.java)
+        val images =  gson.fromJson( imagesString , Images::class.java)
 
         val imageList = ArrayList<SlideModel>()
           images.forEach { imageUrl ->
@@ -91,6 +91,12 @@ class CountryDetailActivity : AppCompatActivity() {
 
         }
 
+        val videosString = intent.getStringExtra("ressources")
+        val videos  =  gson.fromJson( videosString , Images::class.java)
+
+
+       displayVideos(videos , this )
+
        fetchTweets(intent.getStringExtra("name"), this )
 
         }
@@ -101,7 +107,7 @@ class CountryDetailActivity : AppCompatActivity() {
         val compositeDisposable = CompositeDisposable()
         val retrofit = RetrofitClient.instance
         val jsonAPI = retrofit.create(IAPI::class.java)
-        val bearertoken = "Bearer AAAAAAAAAAAAAAAAAAAAAIpGFgEAAAAASCdEQe7UxzAaQ44yZ%2BToTxOyF04%3D4LtxXsyqv7EmPDm48LIKrYnCeIgqRK4FUCWo5YYT46Z6nU2a1m"
+        val bearertoken = "Bearer AAAAAAAAAAAAAAAAAAAAAIpGFgEAAAAAOJaL6uSVdV7UVZvvglHByGrv5i0%3DVNPiFq2HoroUXT0W7WAmxs8UIuqWXmign2KyOmTkJJMqRDcP9d"
 
         compositeDisposable.add( jsonAPI.getTweets(bearertoken , country_name)
             .subscribeOn(Schedulers.io())
@@ -121,6 +127,12 @@ class CountryDetailActivity : AppCompatActivity() {
     fun displayTweets (tweets: List<Data>, context : Context) {
         Log.e("tweets" , tweets.toString())
         rv_tweets.adapter = TweetsAdapter(tweets , context)
+
+    }
+
+    fun displayVideos (videos: Images, context : Context) {
+        Log.e("videos" , videos.toString())
+        rv_videos.adapter = VideosAdapter(videos , context)
 
     }
 
